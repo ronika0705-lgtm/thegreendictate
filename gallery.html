@@ -9,18 +9,191 @@
 <meta property="og:title" content="Gallery & Reel | The Green Dictate">
 <meta property="og:description" content="Concept visuals, Round 3 photographs and the Reel for The Green Dictate, a speakeasy sustainable restaurant in Delhi NCR.">
 <meta property="og:type" content="website">
-<link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Oswald:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,800;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+<style>
+/* The Green Dictate — site styles. Mobile-first. */
+:root{
+  --black:#070b08;
+  --ink:#0c130e;
+  --panel:#111b14;
+  --panel-2:#16231a;
+  --emerald:#1f4d34;
+  --emerald-bright:#2f7a52;
+  --gold:#c4a35a;
+  --gold-soft:#e0c98f;
+  --amber:#d98e3a;
+  --text:#ece6d6;
+  --muted:#a9a58f;
+  --line:rgba(196,163,90,.35);
+  --radius:6px;
+  --serif:"Playfair Display","Times New Roman",Georgia,serif;
+  --body:"Lora",Georgia,"Times New Roman",serif;
+  --label:"Oswald","Arial Narrow",Arial,sans-serif;
+  --max:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--black);color:var(--text);
+  font-family:var(--body);font-size:17px;line-height:1.7;
+  background-image:linear-gradient(rgba(7,11,8,.88),rgba(7,11,8,.92)),url("texture.jpg");
+  background-attachment:fixed;background-size:cover;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--gold-soft);text-decoration-color:var(--line);text-underline-offset:3px}
+a:hover{color:var(--gold)}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:3px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--gold);color:#000;padding:10px 16px;z-index:200;font-family:var(--label)}
+.skip:focus{left:8px}
+.wrap{width:min(100% - 2.5rem,var(--max));margin-inline:auto}
+h1,h2,h3,h4{font-family:var(--serif);color:var(--gold);line-height:1.2;margin:0 0 .6em;letter-spacing:.01em}
+h1{font-size:clamp(2.4rem,7vw,4.6rem);font-weight:800;text-transform:uppercase;line-height:1.05}
+h2{font-size:clamp(1.7rem,4.5vw,2.5rem)}
+h3{font-size:1.3rem}
+p{margin:0 0 1.1em}
+.eyebrow{font-family:var(--label);letter-spacing:.22em;text-transform:uppercase;font-size:.8rem;color:var(--amber);margin:0 0 .8rem;display:block}
+.lead{font-size:1.2rem;color:var(--text)}
+.muted{color:var(--muted)}
+.rule{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);border:0;margin:0}
+section{padding:4.5rem 0}
+.section-head{max-width:720px;margin-bottom:2.5rem}
+.center{text-align:center;margin-inline:auto}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(7,11,8,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;min-height:68px;gap:1rem}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--gold)}
+.brand img{width:34px;height:auto}
+.brand span{font-family:var(--serif);font-weight:700;font-size:1.05rem;letter-spacing:.06em;text-transform:uppercase}
+.menu-toggle{display:none;background:none;border:1px solid var(--line);color:var(--gold);padding:.5rem .8rem;font-family:var(--label);letter-spacing:.15em;cursor:pointer;border-radius:var(--radius)}
+.nav ul{display:flex;gap:1.6rem;list-style:none;margin:0;padding:0;align-items:center}
+.nav ul a{font-family:var(--label);text-transform:uppercase;letter-spacing:.14em;font-size:.82rem;color:var(--text);text-decoration:none;padding:.4rem 0;border-bottom:2px solid transparent}
+.nav ul a:hover,.nav ul a[aria-current="page"]{color:var(--gold);border-bottom-color:var(--gold)}
+@media (max-width:860px){
+  .menu-toggle{display:block}
+  .nav ul{position:absolute;top:68px;left:0;right:0;background:var(--ink);flex-direction:column;gap:0;padding:.5rem 1.25rem 1.25rem;border-bottom:1px solid var(--line);display:none;align-items:stretch}
+  .nav ul.open{display:flex}
+  .nav ul li{border-bottom:1px solid rgba(196,163,90,.15)}
+  .nav ul a{display:block;padding:.9rem 0;border-bottom:0}
+  .nav ul .btn{margin-top:1rem;text-align:center}
+}
+
+/* Buttons */
+.btn{display:inline-block;font-family:var(--label);text-transform:uppercase;letter-spacing:.16em;font-size:.85rem;padding:.95rem 1.7rem;border-radius:var(--radius);text-decoration:none;border:1px solid var(--gold);cursor:pointer;transition:.2s;line-height:1.2}
+.btn-primary{background:var(--gold);color:#0a0a07;font-weight:600}
+.btn-primary:hover{background:var(--gold-soft);color:#000}
+.btn-ghost{background:transparent;color:var(--gold)}
+.btn-ghost:hover{background:rgba(196,163,90,.12);color:var(--gold-soft)}
+.btn-row{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:1.6rem}
+
+/* Hero */
+.hero{padding:5rem 0 4rem;text-align:center;position:relative;border-bottom:1px solid var(--line)}
+.hero .crest{width:120px;margin:0 auto 1.5rem;border-radius:4px;box-shadow:0 0 40px rgba(47,122,82,.25)}
+.hero .by{font-family:var(--label);letter-spacing:.3em;font-size:.8rem;color:var(--muted);text-transform:uppercase;margin-bottom:1rem}
+.hero .sub{font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--gold-soft);margin:1rem 0 .4rem}
+.hero .tag{font-size:1.15rem;max-width:640px;margin:1.2rem auto}
+.hero .badges{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-top:1.6rem}
+.badge{font-family:var(--label);text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;border:1px solid var(--line);color:var(--gold-soft);padding:.35rem .8rem;border-radius:99px}
+.notice{background:rgba(217,142,58,.1);border:1px solid rgba(217,142,58,.5);padding:.8rem 1.1rem;border-radius:var(--radius);font-size:.95rem;max-width:720px;margin:2rem auto 0;color:var(--text)}
+
+/* Grids & cards */
+.grid{display:grid;gap:1.4rem}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
+.card{background:linear-gradient(160deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem}
+.card h3{margin-bottom:.4rem}
+.card .num{font-family:var(--label);color:var(--amber);letter-spacing:.2em;font-size:.8rem;display:block;margin-bottom:.4rem}
+.card p:last-child{margin-bottom:0}
+.quote{border:1px solid var(--line);background:rgba(31,77,52,.25);padding:1.6rem;text-align:center;font-family:var(--serif);font-style:italic;font-size:1.35rem;color:var(--gold-soft);border-radius:var(--radius)}
+.split{display:grid;gap:2.5rem;align-items:center}
+@media(min-width:860px){.split{grid-template-columns:1fr 1fr}.split.rev>:first-child{order:2}}
+.frame{border:1px solid var(--line);padding:8px;background:var(--panel);border-radius:var(--radius)}
+.frame img{border-radius:3px;width:100%}
+.frame figcaption{font-size:.85rem;color:var(--muted);padding:.6rem .3rem 0;font-style:italic}
+figure{margin:0}
+
+/* Stats */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.stat{background:var(--panel);padding:1.4rem 1rem;text-align:center}
+.stat b{display:block;font-family:var(--serif);font-size:1.9rem;color:var(--gold)}
+.stat span{font-family:var(--label);letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;color:var(--muted)}
+
+/* Tables / menu */
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius)}
+table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{padding:.8rem 1rem;text-align:left;border-bottom:1px solid rgba(196,163,90,.18);vertical-align:top}
+th{background:rgba(196,163,90,.14);font-family:var(--label);text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;color:var(--gold)}
+tr:last-child td{border-bottom:0}
+.menu-section{margin-bottom:2.4rem}
+.menu-section h3{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;border-bottom:1px solid var(--line);padding-bottom:.5rem;margin-bottom:.4rem}
+.menu-section h3 small{font-family:var(--label);font-size:.75rem;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;font-weight:400}
+.dish{display:grid;grid-template-columns:1fr auto;gap:.2rem 1.2rem;padding:.9rem 0;border-bottom:1px dashed rgba(196,163,90,.2)}
+.dish .name{font-family:var(--serif);font-size:1.1rem;color:var(--text);font-weight:600}
+.dish .price{font-family:var(--serif);color:var(--gold);font-size:1.1rem;text-align:right;white-space:nowrap}
+.dish .desc{color:var(--muted);font-size:.95rem}
+.dish .radius{color:var(--emerald-bright);font-family:var(--label);letter-spacing:.1em;font-size:.78rem;text-align:right;text-transform:uppercase}
+.radius-tag{color:#6fc597}
+
+/* Signature highlight */
+.signature{border:2px solid var(--gold);background:linear-gradient(160deg,rgba(31,77,52,.45),rgba(12,19,14,.9));padding:2rem;border-radius:var(--radius)}
+.signature .price-big{font-family:var(--serif);font-size:2.2rem;color:var(--gold)}
+
+/* Reel / media */
+.reel{aspect-ratio:9/16;max-width:340px;margin-inline:auto;border:1px dashed var(--gold);background:var(--panel);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;text-align:center;padding:1.5rem;color:var(--muted)}
+.reel video,.reel iframe{width:100%;height:100%;border:0;border-radius:var(--radius)}
+.photo-slot{aspect-ratio:4/3;border:1px dashed var(--line);background:var(--panel);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;text-align:center;padding:1rem;color:var(--muted);font-size:.9rem}
+.photo-slot img{width:100%;height:100%;object-fit:cover}
+.gallery{columns:1;column-gap:1.2rem}
+@media(min-width:700px){.gallery{columns:2}}
+.gallery figure{break-inside:avoid;margin-bottom:1.2rem}
+
+/* Steps */
+.steps{list-style:none;padding:0;margin:0;counter-reset:s;display:grid;gap:1rem}
+.steps li{counter-increment:s;display:grid;grid-template-columns:48px 1fr;gap:1rem;align-items:start;padding:1rem 1.2rem;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel)}
+.steps li::before{content:counter(s);font-family:var(--serif);font-size:1.6rem;color:var(--gold);border:1px solid var(--gold);width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:50%}
+.steps li b{display:block;color:var(--gold-soft);font-family:var(--serif)}
+
+/* Forms */
+form{display:grid;gap:1.1rem}
+label{font-family:var(--label);letter-spacing:.14em;text-transform:uppercase;font-size:.8rem;color:var(--gold);display:block;margin-bottom:.35rem}
+input,select,textarea{width:100%;background:var(--ink);border:1px solid var(--line);color:var(--text);padding:.85rem 1rem;font:inherit;border-radius:var(--radius)}
+input:focus,select:focus,textarea:focus{outline:3px solid var(--amber);border-color:var(--amber)}
+.check{display:flex;gap:.7rem;align-items:flex-start;font-size:.9rem;color:var(--muted)}
+.check input{width:auto;margin-top:.35rem}
+.form-msg{display:none;padding:1rem;border:1px solid var(--emerald-bright);background:rgba(47,122,82,.2);border-radius:var(--radius)}
+
+/* Blog */
+.article{max-width:760px;margin-inline:auto}
+.article h1{font-size:clamp(2rem,6vw,3.2rem);text-transform:none}
+.article .meta{font-family:var(--label);letter-spacing:.14em;text-transform:uppercase;font-size:.78rem;color:var(--muted);margin-bottom:2rem}
+.article h2{margin-top:2.2rem;font-size:1.7rem}
+.article blockquote{margin:2rem 0;padding:1rem 1.5rem;border-left:3px solid var(--gold);font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--gold-soft);background:rgba(31,77,52,.2)}
+.article .cta-box{margin-top:3rem;padding:1.8rem;border:1px solid var(--gold);border-radius:var(--radius);text-align:center;background:rgba(31,77,52,.25)}
+
+/* Footer */
+.site-footer{border-top:1px solid var(--line);background:var(--ink);padding:3.5rem 0 2rem;font-size:.95rem}
+.footer-grid{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.site-footer h4{font-family:var(--label);letter-spacing:.2em;text-transform:uppercase;font-size:.85rem}
+.site-footer ul{list-style:none;padding:0;margin:0}
+.site-footer li{margin-bottom:.4rem}
+.legal{border-top:1px solid rgba(196,163,90,.2);margin-top:2.5rem;padding-top:1.4rem;color:var(--muted);font-size:.85rem}
+.page-title{padding:4rem 0 2.5rem;border-bottom:1px solid var(--line);text-align:center}
+.page-title h1{font-size:clamp(2rem,6vw,3.4rem)}
+
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap nav">
     <a class="brand" href="index.html" aria-label="The Green Dictate — home">
-      <img src="assets/img/logo.svg" alt="" width="34" height="34"><span>The Green Dictate</span>
+      <img src="logo.svg" alt="" width="34" height="34"><span>The Green Dictate</span>
     </a>
     <button class="menu-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
     <ul id="nav-list">
@@ -44,9 +217,9 @@
     </div>
     <div class="reel" id="reel">
       <!-- REPLACE this block with your Reel. Option A (self-hosted file):
-           <video controls playsinline poster="assets/img/reel-poster.jpg"><source src="assets/video/reel.mp4" type="video/mp4"></video>
+           <video controls playsinline poster="reel-poster.jpg"><source src="reel.mp4" type="video/mp4"></video>
            Option B (Instagram/YouTube embed): <iframe src="YOUR_EMBED_URL" title="The Green Dictate Reel" allowfullscreen loading="lazy"></iframe> -->
-      <p>Round 3 Reel placeholder<br><small>Add <code>assets/video/reel.mp4</code> or an embed link</small></p>
+      <p>Round 3 Reel placeholder<br><small>Add <code>reel.mp4</code> or an embed link</small></p>
     </div>
   </div>
 </section>
@@ -57,10 +230,10 @@
     <div class="section-head"><span class="eyebrow">Concept visuals</span><h2>The space</h2>
     <p class="muted">These renders are AI-generated concept visuals from our Round 1 report. Round 3 photographs are added below.</p></div>
     <div class="gallery">
-      <figure class="frame"><img src="assets/img/layout.jpg" alt="Isometric view of the restaurant layout, numbered by zone" loading="lazy"><figcaption>Restaurant layout and guest flow, from the Bureau entrance to the open kitchen.</figcaption></figure>
-      <figure class="frame"><img src="assets/img/decor.jpg" alt="The Chamber: a bar with a backlit bottle wall, green velvet booths and candlelit tables" loading="lazy"><figcaption>The Chamber and The Impound bar: velvet, brass, candlelight and amber pendants.</figcaption></figure>
-      <figure class="frame"><img src="assets/img/uniform.jpg" alt="Black double-breasted chef coat with brass buttons, gold piping and a leather knife roll" loading="lazy"><figcaption>Kitchen uniform: jet-black coat, brass buttons, dagger-and-rose crest.</figcaption></figure>
-      <figure class="frame"><img src="assets/img/crest.jpg" alt="The dagger and rose crest of The Green Dictate" loading="lazy"><figcaption>The crest: the knife is craft and discipline, the rose is harvest and hospitality.</figcaption></figure>
+      <figure class="frame"><img src="layout.jpg" alt="Isometric view of the restaurant layout, numbered by zone" loading="lazy"><figcaption>Restaurant layout and guest flow, from the Bureau entrance to the open kitchen.</figcaption></figure>
+      <figure class="frame"><img src="decor.jpg" alt="The Chamber: a bar with a backlit bottle wall, green velvet booths and candlelit tables" loading="lazy"><figcaption>The Chamber and The Impound bar: velvet, brass, candlelight and amber pendants.</figcaption></figure>
+      <figure class="frame"><img src="uniform.jpg" alt="Black double-breasted chef coat with brass buttons, gold piping and a leather knife roll" loading="lazy"><figcaption>Kitchen uniform: jet-black coat, brass buttons, dagger-and-rose crest.</figcaption></figure>
+      <figure class="frame"><img src="crest.jpg" alt="The dagger and rose crest of The Green Dictate" loading="lazy"><figcaption>The crest: the knife is craft and discipline, the rose is harvest and hospitality.</figcaption></figure>
     </div>
   </div>
 </section>
@@ -70,10 +243,10 @@
   <div class="wrap">
     <div class="section-head"><span class="eyebrow">Round 3 photographs</span><h2>From our tasting table</h2></div>
     <div class="grid g3">
-      <!-- Replace each slot with: <img src="assets/img/round3-01.jpg" alt="describe the dish" loading="lazy"> -->
-      <div class="photo-slot">Round 3 photo 1<br>(add assets/img/round3-01.jpg)</div>
-      <div class="photo-slot">Round 3 photo 2<br>(add assets/img/round3-02.jpg)</div>
-      <div class="photo-slot">Round 3 photo 3<br>(add assets/img/round3-03.jpg)</div>
+      <!-- Replace each slot with: <img src="round3-01.jpg" alt="describe the dish" loading="lazy"> -->
+      <div class="photo-slot">Round 3 photo 1<br>(add round3-01.jpg)</div>
+      <div class="photo-slot">Round 3 photo 2<br>(add round3-02.jpg)</div>
+      <div class="photo-slot">Round 3 photo 3<br>(add round3-03.jpg)</div>
     </div>
   </div>
 </section>
@@ -108,6 +281,6 @@
     <p class="legal">© <span id="year">2026</span> The Dictators · The Green Dictate · Hospitality Pro League 2026–27, Group 3 — Sustainable Hospitality. This is a student concept created for a competition; it is not an operating restaurant. Opening dates, availability, prices and bookings are not confirmed. AI tools supported research, writing and design; all claims were reviewed by the team.</p>
   </div>
 </footer>
-<script src="assets/js/main.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
