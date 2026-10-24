@@ -14,36 +14,45 @@
   var y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
 
-  // Guest-list / enquiry form.
-  // Works with Formspree (or any form endpoint): set data-endpoint on the <form>.
-  // With no endpoint set, it falls back to opening an email draft (mailto).
+  // Guest-list form: sends a confirmation email through EmailJS.
+  // Fill in the three IDs below from your EmailJS dashboard.
+  var EMAILJS_PUBLIC_KEY = '_LPCG_37bEpgOIVrc';
+  var EMAILJS_SERVICE_ID = 'service_ns3x6fb';
+  var EMAILJS_TEMPLATE_ID = 'template_f1j5j3l';
+
   var form = document.getElementById('guest-form');
   if (form) {
+    if (window.emailjs && EMAILJS_PUBLIC_KEY) {
+      emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+    }
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var msg = document.getElementById('form-msg');
-      var endpoint = form.getAttribute('data-endpoint');
+      var btn = form.querySelector('button[type="submit"]');
       var data = new FormData(form);
-
+      var params = {
+        to_name: data.get('name'),
+        to_email: data.get('email'),
+        interest: data.get('interest'),
+        message: data.get('message') || ''
+      };
       function done() {
         form.reset();
+        btn.disabled = false;
         msg.style.display = 'block';
         msg.focus();
       }
-
-      if (endpoint) {
-        fetch(endpoint, { method: 'POST', body: data, headers: { Accept: 'application/json' } })
-          .then(function (r) { if (r.ok) { done(); } else { throw new Error('bad'); } })
-          .catch(function () { alert('Sorry, something went wrong. Please email us instead.'); });
-      } else {
-        var mail = form.getAttribute('data-mailto') || 'REPLACE_WITH_TEAM_EMAIL@example.com';
-        var body = 'Name: ' + data.get('name') + '\nEmail: ' + data.get('email') +
-          '\nInterest: ' + data.get('interest') + '\nMessage: ' + (data.get('message') || '');
-        window.location.href = 'mailto:' + mail + '?subject=' +
-          encodeURIComponent('Guest list interest — The Green Dictate') +
-          '&body=' + encodeURIComponent(body);
-        done();
+      if (!window.emailjs) {
+        alert('Email is not set up yet. Add your EmailJS keys in main.js.');
+        return;
       }
+      btn.disabled = true;
+      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params)
+        .then(done)
+        .catch(function () {
+          btn.disabled = false;
+          alert('Sorry, something went wrong. Please email us instead.');
+        });
     });
   }
 })();
