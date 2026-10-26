@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact & Guest List | The Green Dictate</title>
+<meta name="description" content="Join the First 100 Guest List for The Green Dictate, or contact the team. Opening dates and bookings are yet to be confirmed.">
+<meta name="theme-color" content="#070b08">
+<meta property="og:title" content="Contact & Guest List | The Green Dictate">
+<meta property="og:description" content="Join the First 100 Guest List for The Green Dictate, or contact the team. Opening dates and bookings are yet to be confirmed.">
+<meta property="og:type" content="website">
+<link rel="icon" href="crest.jpg" type="image/jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Oswald:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,800;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="The Green Dictate — home">
+      <img src="crest.jpg" alt="" width="30" height="46" style="width:30px;height:auto;border-radius:3px"><span>The Green Dictate</span>
+    </a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
+    <ul id="nav-list">
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="menu.html">Menu</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html" aria-current="page">Contact</a></li>
+      <li><a class="btn btn-primary" href="landing.html">Join the Guest List</a></li>
+    </ul>
+  </div>
+</header>
+<main id="main">
+
+<div class="page-title"><div class="wrap"><span class="eyebrow">Contact</span><h1>Report to the Bureau</h1>
+<p class="lead muted">Questions, collaborations, and the First 100 Guest List.</p></div></div>
+
+<section id="guest-list">
+  <div class="wrap grid g2">
+    <div>
+      <h2>Join the First 100 Guest List</h2>
+      <p class="lead">Be among the first guests through the Bureau door. Register your interest and we will contact you once opening dates and booking details are confirmed.</p>
+      <p class="notice" style="margin-left:0">This is an interest list, not a reservation. Dates, availability and prices are not yet confirmed, and nothing here is a booking promise.</p>
+      <h3 style="margin-top:2rem">Find us</h3>
+      <ul>
+        <li><strong>Location:</strong> Delhi NCR (venue to be announced)</li>
+        <li><a href="https://www.instagram.com/stateofdictators" target="_blank" rel="noopener">Instagram</a></li>
+      </ul>
+    </div>
+    <div class="card">
+      <form id="guest-form" data-endpoint="">
+        <div><label for="name">Name</label><input id="name" name="name" type="text" required autocomplete="name"></div>
+        <div><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+        <div><label for="interest">I’m interested in</label>
+          <select id="interest" name="interest">
+            <option>The First 100 Guest List</option>
+            <option>The 2029 Table</option>
+            <option>A Compliance Dinner (corporate)</option>
+            <option>Workshops &amp; mandi walks</option>
+            <option>Media / creator collaboration</option>
+          </select></div>
+        <div><label for="message">Message (optional)</label><textarea id="message" name="message" rows="4"></textarea></div>
+        <label class="check" style="text-transform:none;letter-spacing:0;font-family:var(--body);font-size:.9rem;color:var(--muted)"><input type="checkbox" name="consent" required> I agree to be contacted by The Green Dictate about the launch. I can unsubscribe at any time.</label>
+        <button class="btn btn-primary" type="submit">Join the Guest List</button>
+        <div id="form-msg" class="form-msg" role="status" tabindex="-1">Thank you. Your interest has been noted. The Bureau will be in touch.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img src="crest.jpg" alt="The Green Dictate crest" width="70" style="width:70px;border-radius:4px;margin-bottom:1rem">
+        <p class="muted">“Obey the menu. Respect the harvest.”<br>A 50-seat speakeasy restaurant concept for Delhi NCR.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="menu.html">The menu</a></li>
+          <li><a href="gallery.html">Gallery &amp; Reel</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/stateofdictators" rel="noopener" target="_blank">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="legal">© <span id="year">2026</span> The Dictators · The Green Dictate · Hospitality Pro League 2026–27, Group 3 — Sustainable Hospitality. This is a student concept created for a competition; it is not an operating restaurant. Opening dates, availability, prices and bookings are not confirmed. AI tools supported research, writing and design; all claims were reviewed by the team.</p>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
